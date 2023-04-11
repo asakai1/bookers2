@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row flex-column col-8 ml-auto">
+  <div class="row flex-column">
     <h2>Books</h2>
     <table class="table">
       <tbody>
@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @books.each do |book| %>
+          <% books.each do |book| %>
           <tr>
             <td><%= image_tag book.user.get_profile_image(100, 100) %></td>
             <td><%= book.title %></td>
