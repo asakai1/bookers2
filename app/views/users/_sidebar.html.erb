@@ -16,8 +16,10 @@
     </table>
   </div>
   <div class="row">
-    <button type="button", class="btn btn-outline-secondary col-12">
-      <i class="fas fa-user-cog"></i>
-    </button>
+    <% if user == current_user %>
+      <%= link_to(edit_user_path(user.id), class: 'btn btn-outline-secondary col-12') do %>
+        <i class="fas fa-user-cog"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>
