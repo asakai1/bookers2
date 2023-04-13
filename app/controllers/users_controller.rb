@@ -9,23 +9,14 @@ class UsersController < ApplicationController
     @books = @user.books
   end
 
-  def create
-    @book = Book.new(book_params)
-    if @book.save
-      redirect_to book_path(@book.id)
-    else
-      redirect_to book_path
-    end
-  end
-
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(user.id)
+    user = current_user
+    user.update(user_params)
+    redirect_to user_path(current_user.id)
   end
 
   private
