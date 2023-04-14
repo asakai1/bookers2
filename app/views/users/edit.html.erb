@@ -4,17 +4,16 @@
       <h2 class="text-dark bg-white mt-3">User info</h2>
       <%= form_with model: @user,　local: true do |f| %>
         <div class="form-group mx-auto">
-          <label>Name</label>
-          <%= f.text_field :name, class:"form-control", row:"3" %>
+          <%= f.label :Name %><br>
+          <%= f.text_field :name, class:"form-control" %>
         </div>
         <div class="form-group">
-          <label>ProfileImage</label>
-          <%= attachment_image_tag @user, :profile_image %>
-          <%= f.attachment_field :profile_image, accept: "image/*" %>
+          <%= f.label :UserImage %><br>
+          <%= f.file_field :profile_image, class:"form-control-file" %>
         </div>
         <div class="form-group">
-          <label>Introcuction</label>
-          <%= f.attachment_text_area :body, class:"form-control", row:"3" %>
+          <%= f.label :Introduction %><br>
+          <%= f.text_area :introduction, class:"form-control" %>
         </div>
         <%= f.submit 'Update User', class:"btn btn-lg btn-success mt-4" %>
       <% end %>
