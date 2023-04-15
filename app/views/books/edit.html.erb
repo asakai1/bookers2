@@ -1,3 +1,11 @@
+<% if @books.errors.any? %>
+  <%= @books.errors.count %>errors prohibited this obj from being saved:
+  <ul>
+    <% @books.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="form-body mx-auto col-5">
@@ -13,7 +21,7 @@
         </div>
         <%= f.submit 'Update Book', class:"btn btn-success mt-2 mb-2" %>
       <% end %>
-      <%= link_to "Show", book_path(@books.id) %><%= " | " %><%= link_to "Back", book_path(@books) %>
+      <%= link_to "Show", book_path(@books.id) %><%= " | " %><%= link_to "Back", '/books' %>
     </div>
   </div>
 </div>

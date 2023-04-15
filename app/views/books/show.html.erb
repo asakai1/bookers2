@@ -5,17 +5,33 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-3">
-      <%= render 'users/sidebar', user: @user %>
+    <div class="flex-column col-md-3">
+      <h2>User info</h2>
+      <p class="mb-0"><%= image_tag @books.user.get_profile_image(100,100) %></p>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>name</th>
+            <th><%= @books.user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= @books.user.introduction %></th>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to(edit_user_path(@books.user.id), class: 'btn btn-outline-secondary col-12') do %>
+        <i class="fas fa-user-cog"></i>
+      <% end %>
       <%= render 'form', book: @book %>
     </div>
-    <div class="row flex-column col-8 ml-auto">
+    <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
         <tbody>
           <tr>
-            <td><%= image_tag @books.user.get_profile_image(100, 100) %><br>
-              <%= link_to @books.user.name, user_path(@user.id) %>
+            <td><%= image_tag @books.user.get_profile_image(100,100) %><br>
+              <%= link_to @books.user.name, user_path(@books.user.id) %>
             </td>
             <td><%= link_to @books.title, book_path(@books.id) %></td>
             <td><%= @books.body %></td>

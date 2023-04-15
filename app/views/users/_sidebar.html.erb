@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row flex-column">
     <h2>User info</h2>
-    <p class="mb-0"><%= image_tag user.get_profile_image(100, 100) %></p>
+    <p class="mb-0"><%= image_tag user.get_profile_image(100,100) %></p>
     <table class="table">
       <tbody>
         <tr>
@@ -16,10 +16,8 @@
     </table>
   </div>
   <div class="row">
-    <% if user == current_user %>
-      <%= link_to(edit_user_path(user.id), class: 'btn btn-outline-secondary col-12') do %>
-        <i class="fas fa-user-cog"></i>
-      <% end %>
+    <%= link_to(edit_user_path(user.id), class: 'btn btn-outline-secondary col-12') do %>
+      <i class="fas fa-user-cog"></i>
     <% end %>
   </div>
 </div>

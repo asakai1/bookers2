@@ -39,7 +39,7 @@
               </li>
               <li class="nav-item">
                 <%= link_to(destroy_user_session_path, method: :delete, class: 'nav-link text-light') do %>
-                <i class="fas fa-sign-out-alt"> <span></i><%= "Sign out" %></span>
+                <i class="fas fa-sign-out-alt"> <span></i><%= "Log out" %></span>
                 <% end %>
               </li>
               <% else %>
@@ -49,7 +49,7 @@
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to("/homes/about", class: 'nav-link text-light') do %>
+                <%= link_to("/home/about", class: 'nav-link text-light') do %>
                 <i class="fas fa-link"></i> <span><%= "About" %></span>
                 <% end %>
               </li>
