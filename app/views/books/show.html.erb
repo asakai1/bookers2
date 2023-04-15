@@ -14,8 +14,10 @@
             </td>
             <td><%= link_to @books.title, book_path(@books.id) %></td>
             <td><%= @books.body %></td>
+            <% if @books.user == current_user %>
             <td><%= link_to "Edit", edit_book_path(@books.id), class: 'btn btn-success btn-sm mx-auto'%></td>
             <td><%= link_to "Destroy", book_path(@books.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger btn-sm mx-auto'%></td>
+            <% end %>
           </tr>
         </tbody>
       </table>
