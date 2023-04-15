@@ -4,18 +4,16 @@
       <%= render 'users/sidebar', user: @user %>
       <%= render 'form', book: @book %>
     </div>
-    <div class="col-8 ml-auto">
-      <h2>Book Detail</h2>
+    <div class="row flex-column col-8 ml-auto">
+      <h2>Book detail</h2>
       <table class="table">
         <tbody>
           <tr>
             <td><%= image_tag @user.get_profile_image(100, 100) %></td>
-            <td><%= @book.title %></td>
-            <td><%= @book.body %></td>
-            <% if @book.user == current_user %>
-            <td><%= link_to "Edit", edit_book_path(@book.id), class: 'btn btn-info btn-sm col-1 mx-auto'%></td>
-            <td><%= link_to "Destroy", book_path(@book), method: :delete, class: 'btn btn-info btn-sm col-1 mx-auto'%></td>
-            <% end %>
+            <td><%= link_to @books.title, book_path(@books.id) %></td>
+            <td><%= @books.body %></td>
+            <td><%= link_to "Edit", edit_book_path(@books.id), class: 'btn btn-success btn-sm mx-auto'%></td>
+            <td><%= link_to "Destroy", book_path(@books), method: :delete, class: 'btn btn-danger btn-sm mx-auto'%></td>
           </tr>
         </tbody>
       </table>
