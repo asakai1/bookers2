@@ -9,7 +9,7 @@
       <table class="table">
         <tbody>
           <tr>
-            <td><%= image_tag @user.get_profile_image(100, 100) %></td>
+            <td><%= image_tag @books.user.get_profile_image(100, 100) %></td>
             <td><%= link_to @books.title, book_path(@books.id) %></td>
             <td><%= @books.body %></td>
             <td><%= link_to "Edit", edit_book_path(@books.id), class: 'btn btn-success btn-sm mx-auto'%></td>
